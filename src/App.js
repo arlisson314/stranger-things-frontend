@@ -3,6 +3,7 @@ import './App.css';
 
 import StrangerThings from './components/StrangerThings';
 // import StrangerThingsDevelpoment from './components/StrangerThingsDevelopment';
+require('dotenv').config();
 
 function App() {
   const { REACT_APP_DEVELOPMENT } = process.env;
