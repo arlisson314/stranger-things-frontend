@@ -12,4 +12,5 @@ function StrangerThingsDevelpoment() {
     </div>
   );
 }
+
 export default StrangerThingsDevelpoment;
