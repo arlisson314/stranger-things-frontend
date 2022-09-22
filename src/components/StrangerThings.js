@@ -116,7 +116,7 @@ class StrangerThings extends React.Component {
     return (
       <>
         <div>
-          { JSON.parse(REACT_APP_ENV) && (<h1>Em desenvolvimento</h1>)}
+          {REACT_APP_ENV === 'development' && (<h1>Em desenvolvimento</h1>)}
         </div>
         <div
           className={ `reality ${getRealityClass(
