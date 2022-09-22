@@ -6,12 +6,8 @@ import StrangerThings from './components/StrangerThings';
 require('dotenv').config();
 
 function App() {
-  const { REACT_APP_ENV } = process.env;
   return (
     <div className="App">
-      {REACT_APP_ENV === 'development' && (
-        <h1>Em desenvolvimento</h1>
-      )}
       <StrangerThings />
     </div>
   );
