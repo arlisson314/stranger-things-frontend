@@ -4,8 +4,6 @@ import Table from './Table';
 
 require('dotenv').config();
 
-const { REACT_APP_ENV } = process.env;
-
 const TIME = 30000;
 
 const getRealityClass = (hereIsTheUpsideDownWorld) => (
@@ -114,49 +112,44 @@ class StrangerThings extends React.Component {
       hereIsTheUpsideDownWorld, characterName, characters, page,
     } = this.state;
     return (
-      <>
-        <div>
-          {REACT_APP_ENV === 'development' && (<h1>Em desenvolvimento</h1>)}
-        </div>
-        <div
-          className={ `reality ${getRealityClass(
-            hereIsTheUpsideDownWorld,
-          )}` }
-        >
-          <div className="content strangerfy">
-            <div className="change-reality">
-              <button type="button" onClick={ this.changeRealityClick }>
-                {' '}
-                Mudar de Realidade
-              </button>
-            </div>
+      <div
+        className={ `reality ${getRealityClass(
+          hereIsTheUpsideDownWorld,
+        )}` }
+      >
+        <div className="content strangerfy">
+          <div className="change-reality">
+            <button type="button" onClick={ this.changeRealityClick }>
+              {' '}
+              Mudar de Realidade
+            </button>
+          </div>
 
-            <div>
-              <input
-                placeholder="Nome do Personagem"
-                onChange={ this.handleInput }
-                value={ characterName }
-              />
-              <button type="button" onClick={ this.searchClick }>Pesquisar</button>
-            </div>
+          <div>
+            <input
+              placeholder="Nome do Personagem"
+              onChange={ this.handleInput }
+              value={ characterName }
+            />
+            <button type="button" onClick={ this.searchClick }>Pesquisar</button>
+          </div>
 
-            <div>
-              <Table characters={ characters } />
-            </div>
+          <div>
+            <Table characters={ characters } />
+          </div>
 
-            <div>
-              <p>
-                Página atual:
-                {page}
-              </p>
-            </div>
-            <div>
-              <button type="button" onClick={ this.previousPage }>Anterior</button>
-              <button type="button" onClick={ this.nextPage }>Próximo</button>
-            </div>
+          <div>
+            <p>
+              Página atual:
+              {page}
+            </p>
+          </div>
+          <div>
+            <button type="button" onClick={ this.previousPage }>Anterior</button>
+            <button type="button" onClick={ this.nextPage }>Próximo</button>
           </div>
         </div>
-      </>
+      </div>
     );
   }
 }
